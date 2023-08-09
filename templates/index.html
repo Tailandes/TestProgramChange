@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catálogo de Artículos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Catálogo de Artículos</h1>
+    <table>
+        <tr>
+            <th>Clave</th>
+            <th>Descripción Corta</th>
+            <th>Descripción Larga</th>
+            <th>Unidad de Medida</th>
+            <th>Costo</th>
+            <th>Precio</th>
+            <th>Tipo de Cambio</th>
+            <th>Precio en Dólares</th>
+        </tr>
+        {% for articulo in articulos %}
+        <tr>
+            <td><a href="{{ url_for('detalle', clave=articulo['clave']) }}">{{ articulo['clave'] }}</a></td>
+            <td>{{ articulo['descripcion_corta'] }}</td>
+            <td>{{ articulo['descripcion_larga'] }}</td>
+            <td>{{ articulo['unidad_medida'] }}</td>
+            <td>{{ articulo['costo'] }}</td>
+            <td>{{ articulo['precio'] }}</td>
+            <td>{{ articulo['tipo_cambio'] }}</td>
+            <td>{{ articulo['precio_dolares'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('nuevo') }}">Nuevo artículo</a>
+</body>
+</html>

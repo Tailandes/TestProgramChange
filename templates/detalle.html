@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalle del Artículo</title>
+</head>
+<body>
+    <h1>Detalle del Artículo</h1>
+    <p><strong>Clave:</strong> {{ articulo['clave'] }}</p>
+    <p><strong>Descripción Corta:</strong> {{ articulo['descripcion_corta'] }}</p>
+    <p><strong>Descripción Larga:</strong> {{ articulo['descripcion_larga'] }}</p>
+    <p><strong>Unidad de Medida:</strong> {{ articulo['unidad_medida'] }}</p>
+    <p><strong>Costo:</strong> {{ articulo['costo'] }}</p>
+    <p><strong>Precio:</strong> {{ articulo['precio'] }}</p>
+    <a href="{{ url_for('index') }}">Cancelar</a>
+</body>
+</html>
